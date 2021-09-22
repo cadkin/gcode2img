@@ -1,5 +1,5 @@
-#ifndef ARG_H
-#define ARG_H
+#ifndef ARG_H_
+#define ARG_H_
 
 // C
 #include <argp.h>
@@ -42,4 +42,4 @@ error_t parse_opt(int key, char* arg, struct argp_state* state);
 
 const struct argp arg_params = {arg_options, &parse_opt, args_doc, prog_doc};
 
-#endif // ARG_H
+#endif // ARG_H_

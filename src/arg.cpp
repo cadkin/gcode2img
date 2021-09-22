@@ -78,6 +78,7 @@ error_t parse_opt(int key, char* arg, argp_state* state) {
         }
         case ARGP_KEY_ARG: {
             if (state->arg_num > 1) argp_usage(state);
+            if (as->in) argp_usage(state);
 
             std::string sarg(arg);
             if (sarg == "-") {
