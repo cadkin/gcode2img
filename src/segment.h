@@ -27,7 +27,7 @@ class Segment {
         double length();
 
         // Returns a string with the corresponding polygon for this segment. Requires a defined width.
-        std::string writePoly(FILE* fptr, const float& width);
+        std::string writePoly(const float& width);
 
     private:
         Point m_start;

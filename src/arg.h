@@ -20,7 +20,7 @@ struct arg_struct {
     bool all_layers = false;
     bool generate_img = false;
     std::set<int> layers;
-    float bead_width = 0;
+    float bead_width = 5;
     std::string dir;
     FILE* in  = nullptr;
     FILE* out = nullptr;
