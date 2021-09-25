@@ -41,6 +41,15 @@ bool Point::operator>(const Point& rhs) {
     return false;
 }
 
+Point Point::operator+(const Point& rhs) {
+    Point ret(m_x, m_y);
+
+    ret.m_x += rhs.m_x;
+    ret.m_y += rhs.m_y;
+
+    return ret;
+}
+
 double Point::distance(const Point& other) {
     return sqrt(pow(other.m_x - m_x, 2) + pow(other.m_y - m_y, 2));
 }

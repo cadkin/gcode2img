@@ -27,6 +27,9 @@ class Point {
         // Similar to the above operator execept LHS > RHS if RHS lies in quadrant 1, 2, or 4.
         bool operator>(const Point& rhs);
 
+        // Adds the x and y coordinates.
+        Point operator+(const Point& rhs);
+
         // Returns the distance to another point.
         double distance(const Point& other);
 
