@@ -47,11 +47,13 @@ error_t parse_opt(int key, char* arg, argp_state* state) {
 
             break;
         }
+        /*
         case 'i': {
             as->generate_img = true;
 
             break;
         }
+        */
         case 'd': {
             if (!as->dir.empty()) {
                 pquit(128, "Output directory was specified more than once, quitting.\n");
