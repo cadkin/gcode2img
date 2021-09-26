@@ -30,6 +30,7 @@ if [ ! -d examples ]; then
     tar xf examples.tar.gz -C examples
 fi
 
+echo "Running examples (this might take a minute)..."
 
 ./gcode2img examples/AI3M_Stand-in_rotor-BottomToolDRAFT.gcode -l 10 --bead-width 0.2 -s | ./jgraph -P | ps2pdf - | convert -density 300 - -quality 100 out1.png
 
