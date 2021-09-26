@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
     if (parsed_args.all_layers) parsed_args.layers.clear();
     auto gcode_segments = parse_gcode(parsed_args.in, parsed_args.layers);
 
-    printf("newgraph\n\n");
+    printf("newgraph\n\n xaxis nodraw\nyaxis nodraw\n");
     for (auto& layer : gcode_segments) {
         for (auto& seg : layer) {
            printf("(* Segment: (%f, %f) -> (%f, %f) *)\n", seg.start().x(), seg.start().y(), seg.end().x(), seg.end().y());
@@ -25,7 +25,6 @@ int main(int argc, char** argv) {
            printf("%s\n", seg.writePoly(parsed_args.bead_width).c_str());
         }
     }
-
 
     return 0;
 }

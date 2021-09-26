@@ -124,13 +124,15 @@ std::vector<std::vector<Segment>> parse_gcode(FILE* fptr, const std::set<int>& l
         double y = _to_double(y_str);
 
         Point new_point(x, y);
-        Segment seg(state.last_point, new_point);
-        seg.setType(state.region);
+        if (!(state.last_point.x() == 0 && state.last_point.y() == 0)) {
+            Segment seg(state.last_point, new_point);
+            seg.setType(state.region);
+
+            // We have a generated segment now. Put it in the return.
+            ret[state.layer].push_back(seg);
+        }
 
         state.last_point = new_point;
-
-        // We have a generated segment now. Put it in the return.
-        ret[state.layer].push_back(seg);
     }
 
     return ret;

@@ -25,7 +25,7 @@ double Segment::length() {
 }
 
 std::string Segment::writePoly(const float& width) {
-    std::string ret = "newline poly pcfill 1 0 0 color 1 0 0 ";
+    std::string ret = "newline poly pcfill " + CuraRegionColorString[m_type] + " color " + CuraRegionColorString[m_type] + " ";
 
     if (m_start.x() == m_end.x() && m_start.y() == m_end.y()) return std::string();
 
